@@ -10,8 +10,9 @@ public class MainActivity extends AppCompatActivity {
     Button enterBW;
     Button enterdate;
     benchpressDetails BPDB;
+    TextView dbView;
     TextView View;
-
+    String[] userWeight;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,10 +21,11 @@ public class MainActivity extends AppCompatActivity {
         enterBW= (Button) findViewById(R.id.enterBW) ;
         enterdate= (Button) findViewById(R.id.enterdate) ;
         View = (TextView) findViewById(R.id.dbcontent);
+        dbView = (TextView) findViewById(R.id.dbcontent);
         BPDB = new benchpressDetails(getApplicationContext());
         showFullDatabase();
     }
-}
+
     private void showFullDatabase() {
         print(BPDB.getAll());
     }
@@ -34,3 +36,4 @@ public class MainActivity extends AppCompatActivity {
             dbView.append(content[i]+"\n");
         }
     }
+}
