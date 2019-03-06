@@ -99,8 +99,8 @@ public class benchpressDetails extends AppCompatActivity {
 
     /*
      * This is a helper class that takes a lot of the hassle out of using databases. Use as is and complete the following as required:
-     * 	- DATABASE_TABLE
-     * 	- DATABASE_CREATE
+     *     - DATABASE_TABLE
+     *     - DATABASE_CREATE
      */
     private static class ModuleDBOpenHelper extends SQLiteOpenHelper {
 
@@ -152,5 +152,3 @@ public class benchpressDetails extends AppCompatActivity {
 
     }
 }
-
-
