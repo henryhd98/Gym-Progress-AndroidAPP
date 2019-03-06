@@ -9,7 +9,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button enterBW;
     Button enterdate;
-    benchPressDB BPDB;
+    benchpressDetails BPDB;
     TextView View;
 
     @Override
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         enterBW= (Button) findViewById(R.id.enterBW) ;
         enterdate= (Button) findViewById(R.id.enterdate) ;
         View = (TextView) findViewById(R.id.dbcontent);
-        BPDB = new benchPressDB(getApplicationContext());
+        BPDB = new benchpressDetails(getApplicationContext());
         showFullDatabase();
     }
 }
