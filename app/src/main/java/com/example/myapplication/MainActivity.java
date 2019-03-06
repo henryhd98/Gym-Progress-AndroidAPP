@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
     Button enterBW;
-    Button enterdate;
+
     benchpressDetails BPDB;
     TextView dbView;
     TextView View;
