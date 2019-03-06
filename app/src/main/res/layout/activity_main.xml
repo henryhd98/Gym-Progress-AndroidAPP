@@ -7,42 +7,40 @@
     tools:context=".MainActivity">
 
 
-
     <Button
         android:id="@+id/enterBW"
-        android:layout_width="wrap_content"
+        android:layout_width="131dp"
         android:layout_height="wrap_content"
-        android:text="Enter your body weight"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="187dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:text="Enter your body weight" />
 
-    <Button
-        android:id="@+id/enterdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter todays date"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="271dp" />
+
+
     <TextView
         android:id="@+id/dbcontent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true" />
-    <TextView
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="228dp" />
+
+    <Button
         android:id="@+id/tvDate"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true" />
+        android:layout_height="77dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="278dp"
+        android:hint="Select date"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log your details!"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="118dp" />
+        android:text="Log your details!" />
 
 
 
