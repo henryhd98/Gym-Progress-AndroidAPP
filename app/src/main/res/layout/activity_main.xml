@@ -9,11 +9,21 @@
 
     <Button
         android:id="@+id/enterBW"
-        android:layout_width="131dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="20dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
         android:text="Enter your body weight" />
+
+    <Button
+        android:id="@+id/dbView"
+        android:layout_width="wrap_content"
+        android:layout_height="119dp"
+        android:layout_below="@id/enterBW"
+        android:layout_alignParentLeft="true"
+
+        android:layout_marginLeft="99dp"
+        android:layout_marginTop="59dp"
+        android:text="view your weight entries" />
 
 
 
@@ -32,16 +42,9 @@
         android:layout_height="77dp"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="278dp"
+        android:layout_marginBottom="335dp"
         android:hint="Select date"
         android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log your details!" />
-
 
 
 </RelativeLayout>

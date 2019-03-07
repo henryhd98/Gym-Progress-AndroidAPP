@@ -12,6 +12,9 @@ import java.util.ArrayList;
 
 public class benchpressDetails extends AppCompatActivity {
 
+
+    private static final String TAG ="BPDB";
+
     /*
     Definition of table columns
      */
@@ -45,20 +48,32 @@ public class benchpressDetails extends AppCompatActivity {
         }
     }
 
-    public void addRow(String userWeight, int date, int reps, float weight) {
-        // Create a new row of values to insert.
-        ContentValues newValues = new ContentValues();
-
-        // Assign values for each row.
-        newValues.put(KEY_WEIGHT, userWeight);
-        newValues.put(KEY_DATE, date);
-        newValues.put(KEY_benchReps, reps);
-        newValues.put(KEY_BENCHWEIGHT, weight);
-
+    public boolean addRow(String userWeight, int date, int reps, float weight) {
 
         // Insert the row into your table
         SQLiteDatabase db = moduleDBOpenHelper.getWritableDatabase();
-        db.insert(ModuleDBOpenHelper.DATABASE_TABLE, null, newValues);
+        // Create a new row of values to insert.
+        ContentValues contentValues = new ContentValues();
+
+        // Assign values for each row.
+        contentValues.put(KEY_WEIGHT, userWeight);
+        Log.d(TAG, "addRow : ADDING " + userWeight + "to" + KEY_WEIGHT);
+        contentValues.put(KEY_DATE, date);
+        Log.d(TAG, "addRow : ADDING " + date + "to" + KEY_DATE);
+        contentValues.put(KEY_benchReps, reps);
+        Log.d(TAG, "addRow : ADDING " + reps + "to" + KEY_benchReps);
+        contentValues.put(KEY_BENCHWEIGHT, weight);
+        Log.d(TAG, "addRow : ADDING " + weight + "to" + KEY_BENCHWEIGHT);
+
+
+        long result =db.insert(ModuleDBOpenHelper.DATABASE_TABLE, null, contentValues);
+
+        //if date as inserted incorrectly it will return -1
+        if(result==-1) {
+            return false;
+        }else{
+            return true;
+        }
     }
 
 
@@ -111,7 +126,7 @@ public class benchpressDetails extends AppCompatActivity {
         // SQL Statement to create a new database.
         private static final String DATABASE_CREATE = "create table " +
                 DATABASE_TABLE + " (" + KEY_WEIGHT +
-                " integer primary key autoincrement, " +
+                " integer primary key , " +
                 KEY_DATE + " text not null, " +
                 KEY_benchReps + " int , " + KEY_BENCHWEIGHT + " float);";
 
@@ -125,7 +140,10 @@ public class benchpressDetails extends AppCompatActivity {
         // to create a new one.
         @Override
         public void onCreate(SQLiteDatabase db) {
-            db.execSQL(DATABASE_CREATE);
+
+
+
+                    db.execSQL(DATABASE_CREATE);
         }
 
         // Called when there is a database version mismatch meaning that
