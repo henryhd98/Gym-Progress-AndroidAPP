@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Button dbView;
 
     String[] dbContent;
-    String[] userWeight;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         BPDB = new benchpressDetails(getApplicationContext());
 
 
-       // ArrayAdapter<String> appAdapter = new ArrayAdapter<String>(getBaseContext(), R.layout.list_item,dbContent);
+
 
 
 
@@ -50,8 +50,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v ){
                 String newEntry = editText.getText().toString();
+
                 if (editText.length() !=0){
                     AddRow(newEntry);
+                    editText.setText("");
+
                 }else{
                         toastMessage("you must enter something!");
 
@@ -94,18 +97,23 @@ public class MainActivity extends AppCompatActivity {
         mDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month=month +1;
+
+               /* month=month +1;
                 Log.d(TAG,"onDateSet: mm/dd/yyyy:" +month + "/" + day + "/" + year);
                 String date = month + "/" + day + "/" + year ;
 
                 mDisplayDate.setText(date);
+                */
+                Intent intent = new Intent(MainActivity.this, listDataActivity.class);
+                startActivity(intent);
+
             }
         };
     }
 
 
     public void AddRow(String newEntry){
-        boolean insertData =BPDB.addRow(newEntry);
+        boolean insertData = BPDB.addRow(newEntry);
 
         if(insertData) {
             toastMessage("Data successfully inserted");

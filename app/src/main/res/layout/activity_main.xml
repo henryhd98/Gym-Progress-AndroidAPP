@@ -14,6 +14,12 @@
         android:layout_height="92dp"
         android:text="Enter your body weight" />
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="133dp"
+        android:layout_height="92dp"
+        android:textAlignment="center" />
+
     <Button
         android:id="@+id/dbView"
         android:layout_width="wrap_content"
@@ -42,7 +48,7 @@
         android:layout_height="77dp"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="335dp"
+        android:layout_marginBottom="234dp"
         android:hint="Select date"
         android:textSize="30sp" />
 

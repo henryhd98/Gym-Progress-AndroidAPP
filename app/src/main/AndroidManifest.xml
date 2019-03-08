@@ -15,7 +15,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
+        <activity android:name=".benchpressDetails"></activity>
+        <activity android:name=".listDataActivity"></activity>
     </application>
 
 </manifest>

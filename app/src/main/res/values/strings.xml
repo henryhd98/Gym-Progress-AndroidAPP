@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="cost_str_1"> with </string>
+    <string name="cost_str_1"> kg </string>
     <string name="cost_str_2"></string>
 </resources>
