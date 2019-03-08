@@ -127,8 +127,8 @@ public class benchpressDetails extends AppCompatActivity {
         private static final String DATABASE_CREATE = "create table " +
                 DATABASE_TABLE + " (" + KEY_WEIGHT +
                 " integer primary key , " +
-                KEY_DATE + " text not null, " +
-                KEY_benchReps + " int , " + KEY_BENCHWEIGHT + " float);";
+                KEY_DATE + "DATETIME not null, " +
+                KEY_benchReps + " integer , " + KEY_BENCHWEIGHT + " float);";
 
 
         public ModuleDBOpenHelper(Context context, String name,
@@ -168,5 +168,13 @@ public class benchpressDetails extends AppCompatActivity {
         }
 
 
+    }
+
+    public Cursor getData(){
+        SQLiteDatabase db =this.getWritableDatabase();
+        String query ="SELECT * FROM " +  KEY_WEIGHT + "," + KEY_DATE ;
+
+        Cursor data =db.rawQuery(query,null);
+        return data;
     }
 }
