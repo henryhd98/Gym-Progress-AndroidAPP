@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     private EditText editText;
     Button enterBW;
-
-    benchpressDetails BPDB;
     Button dbView;
+    benchpressDetails BPDB;
+
 
     String[] dbContent;
 
@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
         enterBW.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v ){
-                String newEntry = editText.getText().toString();
+               String newEntry=editText.getText().toString();
 
                 if (editText.length() !=0){
-                    AddRow(newEntry);
+                    AddRow(newEntry /*, date*/);
                     editText.setText("");
 
                 }else{
@@ -65,15 +65,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         dbView.setOnClickListener(new View.OnClickListener() {
-
             @Override
-
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, listDataActivity.class);
                 startActivity(intent);
-
             }
-                                  });
+        });
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void AddRow(String newEntry){
-        boolean insertData = BPDB.addRow(newEntry);
+    public void AddRow(String newEntry/*, String date*/){
+        boolean insertData = BPDB.addRow(newEntry/*, date*/);
 
         if(insertData) {
             toastMessage("Data successfully inserted");

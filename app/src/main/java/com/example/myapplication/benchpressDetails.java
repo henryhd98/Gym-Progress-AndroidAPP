@@ -35,7 +35,7 @@ public class benchpressDetails extends SQLiteOpenHelper {
     // Called when no database exists in disk and the helper class needs
     // to create a new one.
     public void onCreate(SQLiteDatabase db) {
-        String createTable = "CREATE TABLE " + TABLE_NAME + " (INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        String createTable = "CREATE TABLE " + TABLE_NAME + " (INTEGER PRIMARY KEY , " +
                 KEY_DATE +" DATETIME NOT NULL," + KEY_WEIGHT + "double NOT NULL)";
         db.execSQL(createTable);
     }
@@ -58,7 +58,7 @@ public class benchpressDetails extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addRow(double userWeight, String date/*, int reps, float weight*/) {
+    public boolean addRow(String userWeight/*, String date/*, int reps, float weight*/) {
 
         // Insert the row into your table
         SQLiteDatabase db = this.getWritableDatabase();
@@ -68,9 +68,9 @@ public class benchpressDetails extends SQLiteOpenHelper {
         // Assign values for each row.
         contentValues.put(KEY_WEIGHT, userWeight);
         Log.d(TAG, "addRow : ADDING " + userWeight + "to" + KEY_WEIGHT);
-          contentValues.put(KEY_DATE, date);
+     /*     contentValues.put(KEY_DATE, date);
       Log.d(TAG, "addRow : ADDING " + date + "to" + KEY_DATE);
-     /*  contentValues.put(KEY_benchReps, reps);
+       contentValues.put(KEY_benchReps, reps);
         Log.d(TAG, "addRow : ADDING " + reps + "to" + KEY_benchReps);
         contentValues.put(KEY_BENCHWEIGHT, weight);
         Log.d(TAG, "addRow : ADDING " + weight + "to" + KEY_BENCHWEIGHT);
@@ -126,7 +126,7 @@ public class benchpressDetails extends SQLiteOpenHelper {
 
   public Cursor getData(){
       SQLiteDatabase db =this.getWritableDatabase();
-      String query ="SELECT * FROM " +  KEY_WEIGHT + "," + KEY_DATE ;
+      String query ="SELECT * FROM " +  KEY_WEIGHT /*+ "," + KEY_DATE */;
 
       Cursor data =db.rawQuery(query,null);
       return data;

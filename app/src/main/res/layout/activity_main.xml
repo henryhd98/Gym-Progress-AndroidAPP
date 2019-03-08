@@ -14,12 +14,18 @@
         android:layout_height="92dp"
         android:text="Enter your body weight" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="133dp"
-        android:layout_height="92dp"
-        android:textAlignment="center" />
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:textAlignment="center" />
+    </RelativeLayout>
     <Button
         android:id="@+id/dbView"
         android:layout_width="wrap_content"
